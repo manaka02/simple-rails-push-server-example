@@ -8,10 +8,10 @@ class TokensController < ApplicationController
 
     message = ''
     if @token.present?
-      message = 'Welcome back!'
+      message = 'Welcome back!' + value
     else
       @token = Token.create(token_params)
-      message = 'Welcome to Expo'
+      message = 'Welcome to Expo' + value
     end
 
     exponent.publish(
