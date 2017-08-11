@@ -8,7 +8,7 @@ class TokensController < ApplicationController
 
     message = ''
     if @token.present?
-      message = 'Welcome back!' + value
+      message = 'Welcome back!' + params[:token][:user][:username]
     else
       @token = Token.create(token_params)
       message = 'Welcome to Expo' + value
